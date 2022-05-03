@@ -82,6 +82,11 @@ lazy val core = (project in file("core"))
 
     javaOptions += "-Xmx1024m",
 
+    javacOptions ++= Seq(
+      "-source", "1.8",
+      "-target", "1.8"
+    ),
+
     // Configurations to speed up tests and reduce memory footprint
     Test / javaOptions ++= Seq(
       "-Dspark.ui.enabled=false",
